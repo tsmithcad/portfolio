@@ -1,0 +1,78 @@
+<!--
+    In this example, the Bootstrap 5 CSS and JS files are included from the CDN. The jumbotron component provides a large, prominent title and a button. The button is configured to trigger the dialog box by using the data-bs-toggle and data-bs-target attributes. The dialog box is implemented using the Bootstrap modal component.
+The dialog overlay has a transparent black glass background achieved with the custom CSS styles defined in the <style> section. The dialog box is scrollable when the content exceeds the available height and includes a close button in the modal header. The footer contains a "Close" button to dismiss the dialog and a "Print" button to initiate the print functionality when clicked.
+You can customize the content inside the dialog by modifying the HTML fragment within the <div class="modal-body"> section.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css">
+  <title>Dialog Example</title>
+  <style>
+    .dialog-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    
+    .dialog-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+    
+    .dialog-close {
+      color: #fff;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the Dialog Example!</h1>
+      <p class="lead">Click the button to open the dialog box.</p>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dialogModal">
+        Open Dialog
+      </button>
+    </div>
+  </div>
+
+  <!-- Dialog Modal -->
+  <div class="modal fade" id="dialogModal" tabindex="-1" aria-labelledby="dialogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dialogModalLabel">Dialog Box</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This is the dialog box content. It can contain any HTML fragment.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="window.print()">Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

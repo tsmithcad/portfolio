@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index Page</title>
+</head>
+<body>
+  <h1>Index Page</h1>
+
+  <!-- Add the HTML elements where you want to render the details -->
+  <div id="detail1"></div>
+  <div id="detail2"></div>
+  <div id="detail3"></div>
+
+  <!-- Include the JavaScript code -->
+  <script>
+    // JavaScript code here
+    // Get all HTML files in the "details" subdirectory
+const htmlFiles = Array.from(document.querySelectorAll('link[rel="import"]'))
+  .filter(link => link.href.includes('/details/'))
+  .map(link => link.href);
+
+// Render HTML files to corresponding elements
+htmlFiles.forEach(file => {
+  const id = file.substring(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
+  const element = document.getElementById(id);
+
+  if (element) {
+    fetch(file)
+      .then(response => response.text())
+      .then(html => {
+        element.innerHTML = html;
+      })
+      .catch(error => {
+        console.error(`Error loading ${file}:`, error);
+      });
+  }
+});
+
+// for (var i = 0; i < htmlFiles.length; i++) {
+//   var file = htmlFiles[i];
+//   var id = file.substring(file.lastIndexOf('/') + 1, file.lastIndexOf('.'));
+//   var element = document.getElementById(id);
+
+//   if (element) {
+//     fetch(file)
+//       .then(function(response) {
+//         return response.text();
+//       })
+//       .then(function(html) {
+//         element.innerHTML = html;
+//       })
+//       .catch(function(error) {
+//         console.error('Error loading ' + file + ':', error);
+//       });
+//   }
+// }
+
+
+  </script>
+</body>
+</html>

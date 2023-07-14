@@ -1,0 +1,89 @@
+ /* Hyperlink dark mode fix */
+ a {
+  color: #0A64BC;  /* Trust Blue */
+}
+
+a:visited {
+  color: #0A64BC; /* Trust Blue */
+}
+
+  a:hover {
+    color: #00ff00; /* Green */
+  }
+
+  a:active {
+    color: #ffff00; /* Yellow */
+  }
+
+  /* Dark mode styling */
+  body {
+    padding: 20px; /* Add padding */
+    margin: 0; /* Add margin */
+    background-color: #111;
+    color: #fff;
+    font-family: 'SF Pro Display', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  .jumbotron {
+    background-color: #333;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+
+  .project {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px; /* Add padding */
+    margin-bottom: 20px; /* Add margin-bottom */
+  }
+
+  .hover-effect {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    padding: 10px; /* Add padding */
+  }
+
+  .hover-effect:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Hide HUD on small screens */
+  @media (max-width: 600px) {
+    .hud {
+      display: none;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #333;
+  }
+
+  tr:nth-child(even) {
+    background-color: #222;
+  }
+
+.btn-dark-mode {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #343a40;
+}
+
+.btn-dark-mode:hover {
+  background-color: #23272b;
+  border-color: hsl(210, 10%, 15%);
+}

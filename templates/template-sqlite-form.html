@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+Fill in the form fields and click the "Add Project" button. The form values will be inserted into the "projects" table of the SQLite database.
+Note: SQLite is an embedded database and doesn't require a separate server. The code provided here uses the sqlite3 package to interact with the database file directly.
+When running the server locally, it will create or open the "project_database.db" file in the same directory and perform CRUD operations on the "projects" table. If the database file doesn't exist, it will be created automatically.
+Remember to handle any security concerns when exposing your database file over a public server.
+-->
+<html>
+<head>
+  <title>CRUD Operations</title>
+  <script>
+    const sqlite3 = require('sqlite3').verbose();
+
+    // Create or open the SQLite database
+    const db = new sqlite3.Database('project_database.db', (error) => {
+      if (error) {
+        console.error('Error connecting to the database:', error);
+      } else {
+        console.log('Connected to the database.');
+    
+        // Create projects table if it doesn't exist
+        db.run(`CREATE TABLE IF NOT EXISTS projects (
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          title TEXT,
+          description TEXT
+        )`);
+      }
+    });
+    
+    // Handle form submission
+    const projectForm = document.getElementById('projectForm');
+    projectForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+    
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+    
+      // Insert form values into the projects table
+      db.run(`INSERT INTO projects (title, description) VALUES (?, ?)`, [title, description], function(error) {
+        if (error) {
+          console.error('Error inserting project:', error);
+        } else {
+          console.log('Project added with ID:', this.lastID);
+          projectForm.reset();
+        }
+      });
+    });
+    
+    // Close the database connection when the window is unloaded
+    window.addEventListener('beforeunload', () => {
+      db.close((error) => {
+        if (error) {
+          console.error('Error closing the database:', error);
+        } else {
+          console.log('Database connection closed.');
+        }
+      });
+    });
+    
+  </script>
+</head>
+<body>
+  <h1>CRUD Operations</h1>
+
+  <form id="projectForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea><br><br>
+
+    <button type="submit">Add Project</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

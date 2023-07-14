@@ -1,0 +1,173 @@
+
+
+/* 10 Hover Animation CSS --> */
+    .hover-effect {
+        position: relative;
+        animation: hoverAnimation 2s infinite alternate;
+    }
+
+    @keyframes hoverAnimation {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Example 1: Fading In */
+    .fade-in {
+        opacity: 0;
+        animation: fadeInAnimation 1s forwards;
+    }
+
+    @keyframes fadeInAnimation {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Example 2: Scaling */
+    .scale {
+        transform: scale(0);
+        animation: scaleAnimation 1s forwards;
+    }
+
+    @keyframes scaleAnimation {
+        from {
+            transform: scale(0);
+        }
+        to {
+            transform: scale(1);
+        }
+    }
+
+    /* Example 3: Rotating */
+    .rotate {
+        transform: rotate(0);
+        animation: rotateAnimation 1s infinite linear;
+    }
+
+    @keyframes rotateAnimation {
+        from {
+            transform: rotate(0);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Example 4: Sliding In */
+    .slide-in {
+        transform: translateX(-100%);
+        animation: slideInAnimation 1s forwards;
+    }
+
+    @keyframes slideInAnimation {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    /* Example 5: Bouncing */
+    .bounce {
+        animation: bounceAnimation 0.5s infinite;
+    }
+
+    @keyframes bounceAnimation {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* Example 6: Blinking */
+    .blink {
+        animation: blinkAnimation 1s infinite;
+    }
+
+    @keyframes blinkAnimation {
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
+    }
+
+    /* Example 7: Pulsating */
+    .pulsate {
+        animation: pulsateAnimation 1s infinite;
+    }
+
+    @keyframes pulsateAnimation {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Example 8: Flipping */
+    .flip {
+        animation: flipAnimation 1s infinite;
+    }
+
+    @keyframes flipAnimation {
+        0%,
+        100% {
+            transform: rotateY(0);
+        }
+        50% {
+            transform: rotateY(180deg);
+        }
+    }
+
+    /* Example 9: Moving Diagonally */
+    .move-diagonal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: moveDiagonalAnimation 2s infinite alternate;
+    }
+
+    @keyframes moveDiagonalAnimation {
+        from {
+            top: 0;
+            left: 0;
+        }
+        to {
+            top: 100px;
+            left: 100px;
+        }
+    }
+
+    /* Example 10: Spinning */
+    .spin {
+        animation: spinAnimation 1s infinite linear;
+    }
+
+    @keyframes spinAnimation {
+        from {
+            transform: rotateZ(0);
+        }
+        to {
+            transform: rotateZ(360deg);
+        }
+    }

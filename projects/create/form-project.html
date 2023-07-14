@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>T Smith Dev | Create Project</title>
+
+        <!-- Add Bootstrap CSS -->
+        <link
+        rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Add Custom CSS -->
+        <link rel="stylesheet" href="/css/buttons.css">
+        <link rel="stylesheet" href="/css/darkmode.css">
+        <link rel="stylesheet" href="/css/particles.css">
+        <link rel="stylesheet" href="/css/projects.css">
+    <!-- Add Third Party CSS -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;700&display=swap" rel="stylesheet"> -->
+        <!-- <link rel="icon" type="image/png" href="https://example.com/favicon.png"> -->
+
+    </head>
+
+    <body>
+        <!-- Add portfolio html components -->
+        <div id="particle-container"></div>
+        <div
+            id="welcome-container" class="jumbotron">
+            <!-- <img id="headshot-image" src="https://drive.google.com/uc?id=1_Hp_806n5G1wf8u6LbcMJL3zKFkJO86K" alt="Headshot" class="rounded mx-auto d-block"> -->
+            <h1 class="display-4">Thomas D Smith II</h1>
+            <p class="lead">.NET Development Portfolio</p>
+
+            <p>Add project to portfolio</p>
+        </div>
+        <div id="projects-form"></div>
+
+        <div class="container">
+            <form id="projectForm">
+                <div class="mb-3">
+                    <label for="productName" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" id="productName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="productLink" class="form-label">Product Link</label>
+                    <input type="text" class="form-control" id="productLink" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="projectName" class="form-label">Project Name</label>
+                    <input type="text" class="form-control" id="projectName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="platform" class="form-label">Platform</label>
+                    <input type="text" class="form-control" id="platform" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="goal" class="form-label">Goal</label>
+                    <input type="text" class="form-control" id="goal" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="solution" class="form-label">Solution</label>
+                    <textarea class="form-control" id="solution" rows="3" required></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="clientBenefits" class="form-label">Client Benefits</label>
+                    <textarea class="form-control" id="clientBenefits" rows="10" required></textarea>
+                </div>
+                
+
+                <div class="mb-3">
+                    <label for="googledrivelink" class="form-label">Google Drive Embed Media Link</label>
+                    <input type="text" class="form-control" id="googledrivelink" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                
+
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </div>
+
+        <!-- Add Bootstrap and Three.js JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+
+        <!-- Add Custom JavaScript -->
+        <script src="/js/form-project.js"></script>
+        <script src="/js/particles.js"></script>
+    </body>
+
+</html>

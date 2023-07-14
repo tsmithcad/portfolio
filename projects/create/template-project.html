@@ -1,0 +1,67 @@
+<!-- Serve as a layout template for project view -->
+<section class="container">
+    <div class="project rounded-lg shadow p-4 mb-4">
+        
+        
+        <h2 class="h3 font-weight-bold mb-3">
+            <a id="product" target="_blank">Insert product name and set product link...</a>
+            <span id="project-details">Insert project name... | Insert platform...</span>
+        </h2>
+
+        <p id="goal" class="mb-3">Insert goal here...</p>
+
+        <p id="solution">Insert solution here...</p>
+
+        <div class="project-media">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe id="media-link" class="embed-responsive-item" allowfullscreen></iframe>
+            </div>
+        </div>
+        <br>
+
+        <button class="collapsible text-center btn btn-dark btn-dark-mode">Details</button>
+        <div class="content">
+            <br>
+            <h3>Technology Table</h3>
+            <div id="technology-table">Insert technology table here...</div>
+            <br>
+
+            <h3>Client Benefits</h3>
+            <div id="client-benefits">Insert client benefits here...</div>
+            <div id="client-benefits-table">Insert table here...</div>
+        </div>
+    </div>
+</section>
+
+<script>
+function injectProjectData(project) {
+    // Inject project data into HTML elements
+    document.getElementById('product').href = project.productLink;
+    document.getElementById('product').innerText = project.productName;
+
+    document.getElementById('project-details').innerText = `${project.projectName} | ${project.platform}`;
+    document.getElementById('goal').innerText = project.goal;
+    document.getElementById('solution').innerText = project.solution;
+    document.getElementById('media-link').src = project.googledrivelink;
+    document.getElementById('technology-table').innerText = project.technologyTable;
+    document.getElementById('client-benefits').innerText = project.clientBenefits;
+}
+
+// Create a new instance of the Project class
+const project = new Project(
+    'Client Benefits value',
+    '2023-07-12',
+    'Goal value',
+    'https://drive.google.com',
+    'GUID value',
+    'Platform value',
+    'Product Name value',
+    'Project Name value',
+    'Solution value',
+    'Technology Table value'
+);
+
+// Call the function to inject project data into HTML elements
+injectProjectData(project);
+</script>
+

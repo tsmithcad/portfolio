@@ -1,0 +1,80 @@
+<!--
+    In this example, the HTML structure consists of a container div that holds the scrollable thumbnail divs. The thumbnail divs are styled to mimic the column and row count similar to worldstarhiphop.com. Each thumbnail is represented by the .thumbnail-item class, which has a fixed aspect ratio, dark background color, border-radius, and overflow set to hidden.
+
+The .thumbnail-container class sets the flex container to enable a responsive row layout with a gap between thumbnail items. The overflow-x: auto; property allows horizontal scrolling when the thumbnails exceed the container's width.
+
+The example includes three placeholder thumbnail items with their respective images, represented by the <img> tags. You can add more thumbnail items by duplicating the <div class="thumbnail-item"> and <img> tags as needed.
+
+The overall page styling is set to dark mode, with a dark background color and white text color. Adjust the image URLs in the src attribute of the <img> tags to display your desired thumbnail images.
+
+Feel free to customize the styles, add additional content, and adjust the layout to meet your specific requirements.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Thumbnails - Dark Mode</title>
+  <style>
+    body {
+      background-color: #1d1d1d;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .thumbnail-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    .thumbnail-item {
+      flex: 0 0 calc(25% - 15px);
+      max-width: calc(25% - 15px);
+      height: 0;
+      padding-bottom: calc(25% - 15px);
+      background-color: #333333;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .thumbnail-item img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Scrollable Thumbnails - Dark Mode</h1>
+    <div class="thumbnail-container">
+      <div class="thumbnail-item">
+        <img src="https://via.placeholder.com/400x400" alt="Thumbnail 1">
+      </div>
+      <div class="thumbnail-item">
+        <img src="https://via.placeholder.com/400x400" alt="Thumbnail 2">
+      </div>
+      <div class="thumbnail-item">
+        <img src="https://via.placeholder.com/400x400" alt="Thumbnail 3">
+      </div>
+      <!-- Add more thumbnail items here -->
+    </div>
+  </div>
+</body>
+</html>

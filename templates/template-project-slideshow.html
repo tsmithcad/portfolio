@@ -1,0 +1,94 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+
+        <style>
+            /* styles.css */
+            body.dark-mode {
+                /* Dark mode styles */
+            }
+
+            .carousel {
+                /* Carousel styles */
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                /* Navigation arrow styles */
+            }
+        </style>
+
+        <title>Photo Carousel</title>
+    </head>
+    <body>
+        <div class="container">
+            <div
+                id="carouselExample"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <!-- Card content -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <!-- Card content -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card">
+                            <!-- Card content -->
+                        </div>
+                    </div>
+                </div>
+                <a
+                    class="carousel-control-prev"
+                    href="#carouselExample"
+                    role="button"
+                    data-bs-slide="prev"
+                >
+                    <span
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a
+                    class="carousel-control-next"
+                    href="#carouselExample"
+                    role="button"
+                    data-bs-slide="next"
+                >
+                    <span
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            // script.js
+            $(document).ready(function () {
+                $('.carousel').carousel({
+                    interval: 7000, // Slide every 7 seconds
+                })
+            })
+        </script>
+    </body>
+</html>

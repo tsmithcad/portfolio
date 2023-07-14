@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/hud.css" />
+
+<!-- Static hoovering HUD template -->
+<div class="footer text-center">
+	<div>
+		<small class="lead">Music By: Shane Alexander</small>
+<br>
+		<audio id="audioPlayer" controls autoplay>
+			<source src="/music/Glockini (Prodby Shane Alexander) bpm 168.mp3" type="audio/mp3">
+			Your browser does not support the audio element.
+		  </audio>
+	</div>
+	<small> I built this servless web app using node.js and JavaScript. It was cost-free to create! Usually, I work with .NET, but this time I wanted to try something new. I'm excited to add more cool features and show that you don't need lots of money for awesome software. Stay tuned for code snippets soon!</small>
+</div>
+
+  <script>
+    window.addEventListener('load', function() {
+        var audioPlayer = document.getElementById('audioPlayer');
+        
+		audioPlayer.play();
+        
+      });
+  </script>
+
+<script src="/js/hud.js"></script>
